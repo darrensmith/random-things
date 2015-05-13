@@ -1,0 +1,81 @@
+<html>
+	<body>
+
+		<style type="text/css" media="screen">
+		    .tableContainer {
+		    	display:table;
+		    	width: 80%;
+		    	margin-left:5%;
+		    	margin-right:5%;
+		    }
+		    .tableRow {
+		    	display:table-row;
+		    }
+		    .tableCell {
+		    	display:table-cell;
+		    	padding-bottom: 15px;
+		    }
+		    .formFieldLabel {
+		    	width:20%; 
+		    	text-align:right; 
+		    	vertical-align: top;
+		    	padding-right:10%; 
+		    }
+		    .formFieldInput {
+		    	width: 80%;
+		    }
+		    .formFieldInput > input {
+		    	height:30px; 
+		    	width:100%;
+		    }
+		    .formFieldInput > textarea {
+		    	height:300px; 
+		    	width:100%;
+		    	resize: none;
+		    }
+
+		    @media only screen and (max-width: 480px) {
+		    	.tableCell {
+		    		display:block;
+		    	}
+		    	.formFieldLabel {
+		    		width: 100%;
+		    		text-align:left;
+		    	}
+			    .formFieldInput {
+		    		width: 100%;
+			    }
+			}
+
+		</style>
+
+		<div>
+
+			<div class="tableContainer">
+
+				<div class="tableRow">
+					<div class="tableCell formFieldLabel">Name:</div>
+					<div class="tableCell formFieldInput"><input type="text"/></div>
+				</div>
+
+				<div class="tableRow">
+					<div class="tableCell formFieldLabel">Parameter 2:</div>
+					<div class="tableCell formFieldInput"><input type="text"/></div>
+				</div>
+
+				<div class="tableRow">
+					<div class="tableCell formFieldLabel">Parameter 2:</div>
+					<div class="tableCell formFieldInput"><textarea></textarea></div>
+				</div>
+
+				<div class="tableRow">
+					<div class="tableCell formFieldLabel">Parameter 2:</div>
+					<div class="tableCell formFieldInput"><input type="text"/></div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+</html>
