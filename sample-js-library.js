@@ -1,10 +1,17 @@
 /* 
 	====================================
 
-	Javascript Module Skeleton
+	Javascript Library Skeleton
 	Message Container
 
 	====================================
+*/
+
+
+/*
+	============
+	Core Library
+	============
 */
 
 "use strict";
@@ -17,7 +24,7 @@
 		============================
 	*/
 	var moduleDefinition = {
-		name: 'messages',
+		library: 'messages',
 		version: '1.0',
 		author: 'Darren Smith'
 	};
@@ -34,6 +41,9 @@
 	myModule.noConflict = function() {
 	  root.myModule = previous_myModule;
 	  return myModule;
+	}
+	myModule.loadPlugin = function(plugin){
+		
 	}
 
 	/*
@@ -64,7 +74,7 @@
 				return myModule;
 			});
 		} else {
-		  this[moduleDefinition.name] = myModule;
+		  this[moduleDefinition.library] = myModule;
 		}
 	}
 
@@ -73,9 +83,45 @@
 
 
 /*
-	===========================================================
-	Instantiate Library Resource and Execute Function (Example)
-	===========================================================
+	==============
+	Library Plugin
+	==============
+*/
+
+
+(function(){
+
+	/*
+		============================
+		Initialise plugin definition
+		============================
+	*/
+	var moduleDefinition = {
+		library: 'messages',
+		plugin: 'messagesAltDisplay',
+		version: '1.0',
+		author: 'Darren Smith'
+	};
+
+	/*
+		===============================
+		Implement plugin business logic
+		===============================
+	*/
+
+	this.messages.messageContainer.prototype.altDisplayMessage = function(){
+		alert('(Alternative) ' + this.message);
+	}
+
+
+}).call(this);
+
+
+
+/*
+	===================================================================
+	Instantiate Library Resource, Plugin and Execute Function (Example)
+	===================================================================
 */
 var msgContainer = new messages.messageContainer("Hello");
-msgContainer.displayMessage();
+msgContainer.altDisplayMessage();
